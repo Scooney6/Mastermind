@@ -15,7 +15,7 @@
     <a href="register.php">Register Here</a>
     <?php
     if(isset($_SESSION['LogErr'])) {?>
-        <span style='color:red'>Invalid Login</span>
+        <span style='color:red'>Invalid credentials</span>
     <?php }?>
 </body>
 </html>

@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,5 +13,9 @@
     <input type="submit" name="submit">
     <input type="hidden" name="Register" value="1">
 </form>
+<?php
+if(isset($_SESSION['RegErr'])) {?>
+    <span style='color:red'>User already registered</span>
+<?php }?>
 </body>
 </html>
