@@ -7,21 +7,23 @@
 </head>
 
 <body>
-   <table>
-    <tr>
-        <td>Place</td>
-        <td>Name</td>
-        <td>Score</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-   </table>
+
 
     <?php
-    function leaderboad(){
+    function leaderboard(){
+        echo "   <table>
+        <tr>
+            <td>Place</td>
+            <td>Name</td>
+            <td>Score</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+       </table> ";
+
         $myfile = fopen("./leaderboard.txt", "r") or die("Unable to open file!");
         $i = 1;
         echo "

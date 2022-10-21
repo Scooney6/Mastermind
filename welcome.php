@@ -1,9 +1,8 @@
-<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Welcome to Mastermind</title>
 </head>
 
 <body>
@@ -17,9 +16,7 @@
     <a href='./register.php'>Click here to Register</a>
     <h2>Current Leaderboard:</h2>
     ";
-    leaderboad();   
-    if(isset($_SESSION['LogErr'])) {?>
-        <span style='color:red'>Invalid credentials</span>
-    <?php }?>
+    leaderboard();   
+    ?>
 </body>
 </html>
