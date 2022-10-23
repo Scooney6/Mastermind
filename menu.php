@@ -20,11 +20,3 @@ require "protect.php";
     <a href="logout.php">Logout</a>
 </body>
 </html>
-
-
-<?php
-/*
-  * Difficulty dropdown, new game button -> newgame
-  * Logout button
-  * Your highscores
-*/
