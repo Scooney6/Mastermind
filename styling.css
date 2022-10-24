@@ -1,3 +1,31 @@
 body{
     background-color: aqua;
+    text-align: center;
+   
 }
+table {
+    border-collapse: collapse;
+  }
+#lead table, tr, td{
+    align-content: center;
+    border: 1px solid;
+    border-color: black;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    
+}
+
+#lead th {
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+#lead  tr:nth-child(even) {background-color: white;}
+#lead  tr:nth-child(odd) {background-color: lightgrey;}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }

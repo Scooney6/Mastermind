@@ -3,11 +3,11 @@
 function leaderboard() {
     $myfile = fopen("./leaderboard.txt", "r") or die("Unable to open file!");
     echo "
-    <table>
+    <table id='lead' class='center'>
         <tr>
-            <td>Place</td>
-            <td>Name</td>
-            <td>Score</td>
+            <th>Place</th>
+            <th>Name</th>
+            <th>Score</th>
         </tr>";
     for($i = 1; $i <= 10; $i++) {
         if ($line = fgets($myfile)) {
