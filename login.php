@@ -1,19 +1,15 @@
 <?php
-/* Check Login form submitted */
+// If login form submitted, check if their login is in the file.
+// If so, send them to the menu and set the session username.
 if(isset($_POST['Login'])){
-    session_start(); /* Starts the session */
-    /* Check and assign submitted Username and Password to new variable */
+    session_start();
     $Username = $_POST['Username'];
     $Password = $_POST['Password'];
-
     $logins = fopen("logins.txt", "r");
-
-    while (($login = fgets($logins)) !== false) {
+    while(($login = fgets($logins)) !== false) {
         $loginCredentials = explode(',', $login);
-        /* Check Username and Password existence in defined array */
-        if (($loginCredentials[0] == $Username) && (trim($loginCredentials[1]) == $Password)){
-            /* Success: Set session variables and redirect to Protected page  */
-            $_SESSION['Username']=$Username;
+        if(($loginCredentials[0] == $Username) && (trim($loginCredentials[1]) == $Password)){
+            $_SESSION['Username'] = $Username;
             if(isset($_SESSION['LogErr'])) {
                 unset($_SESSION['LogErr']);
             }
@@ -21,8 +17,6 @@ if(isset($_POST['Login'])){
             exit();
         }
     }
-
-    /*Unsuccessful attempt: Set error message */
     $_SESSION['LogErr'] = 1;
     header("location:home.php");
     exit();
