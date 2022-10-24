@@ -5,12 +5,14 @@ require "leaderboard-handler.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mastermind</title>
+    <title>Welcome to Mastermind</title>
+    <link rel="stylesheet" href="styling.css">
+
 </head>
 <body>
     <h1>Welcome to Mastermind!</h1>
-    <a href='./home.php'>Click here to login</a>
-    <a href='./register.php'>Click here to Register</a>
+    <a href='./home.php'><button type="button">Click here to login </button></a>
+    <a href='./register.php'><button type="button">Click here to register </button></a>
     <h2>Leaderboard:</h2>
     <?php leaderboard(); ?>
 </body>

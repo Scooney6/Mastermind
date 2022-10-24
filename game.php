@@ -1,4 +1,11 @@
-<?php
+<html>
+    <head>
+        <title>Mastermind!</title>
+        <link rel="stylesheet" href="styling.css">
+
+    </head>
+        <body>
+        <?php
 require("protect.php");
 require("game-handler.php");
 ?>
@@ -96,9 +103,12 @@ if(isset($_SESSION["Game"]["Guesses"])) {
 </table>
 </form>
 <br>
-<a href="logout.php">Logout</a>
+<a href="logout.php"><button type="button">Logout</button></a>
 
 <?php
 // Uncomment to show the secret key
 // print_r($_SESSION["Game"]["Secret"]);
 ?>
+        </body>
+    
+</html>

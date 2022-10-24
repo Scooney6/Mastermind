@@ -21,7 +21,7 @@ if(isset($_POST['Register'])){
     if(isset($_SESSION['RegErr'])) {
         unset($_SESSION['RegErr']);
     }
-    $file = fopen("logins.txt", "a+");
+    $file = fopen("logins.txt", "a");
     $txt = $Username . "," . $Password . PHP_EOL;
     fwrite($file, $txt);
     fclose($file);

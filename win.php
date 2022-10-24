@@ -5,7 +5,9 @@ require("leaderboard-handler.php")
 <!Doctype html>
 <html>
 <head>
-    <title>Mastermind</title>
+    <title>Mastermind End Game</title>
+    <link rel="stylesheet" href="styling.css">
+
 </head>
 <body>
 <h1>You won!</h1>
@@ -13,7 +15,8 @@ require("leaderboard-handler.php")
 <h2>You're Time: <?php echo(round($_SESSION["Game"]["Time"], 2)); ?> Seconds</h2>
 <br>
 <?php leaderboard(); ?>
-<a href="logout.php">Logout</a>
-<a href="exit-game.php">Back to menu</a>
+<a href="exit-game.php"><button type="button">Back to menu</button></a>
+<a href="logout.php"><button type="button">Logout</button></a>
+
 </body>
 </html>
