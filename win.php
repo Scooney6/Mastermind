@@ -15,8 +15,8 @@ require("leaderboard-handler.php")
 <h2>You're Time: <?php echo(round($_SESSION["Game"]["Time"], 2)); ?> Seconds</h2>
 <br>
 <?php leaderboard(); ?>
+<br>
 <a href="exit-game.php"><button type="button">Back to menu</button></a>
 <a href="logout.php"><button type="button">Logout</button></a>
-
 </body>
 </html>
