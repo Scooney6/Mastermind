@@ -1,5 +1,6 @@
 <?php
 require "protect.php";
+require "rules.php";
 ?>
 <!Doctype html>
 <html>
@@ -20,5 +21,7 @@ require "protect.php";
     </form>
     <br>
     <a href="logout.php"><button type="button">Logout</button></a>
+    <br>
+    <?php get_rules(); ?>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 require("protect.php");
 require("game-handler.php");
+require("rules.php");
 ?>
 <html>
     <head>
@@ -101,8 +102,10 @@ if(isset($_SESSION["Game"]["Guesses"])) {
 </form>
 <br>
 <a href="logout.php"><button type="button">Logout</button></a>
+<br>
 
 <?php
+get_rules();
 // Uncomment to show the secret key
 // print_r($_SESSION["Game"]["Secret"]);
 ?>
