@@ -11,8 +11,7 @@ table {
     border: 1px solid;
     border-color: black;
     width: 25%;
-    margin-left: auto;
-    margin-right: auto;
+    
     border-collapse: collapse;
     
 }
@@ -29,3 +28,21 @@ table {
     margin-left: auto;
     margin-right: auto;
   }
+
+#userInput table{
+    width: 0%;
+    white-space:nowrap;
+    table-layout: auto;
+    width: 180px;
+}
+.game{
+    margin-left: auto;
+    margin-right: auto;
+}
+table.game {
+    table-layout: auto;
+    width: 180px;
+    border:0;
+  }
+#userInput  tr:nth-child(even) {background-color: white;}
+#userInput  tr:nth-child(odd) {background-color: lightgrey;}

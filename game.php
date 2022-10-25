@@ -10,7 +10,7 @@ require("protect.php");
 require("game-handler.php");
 ?>
 <form action="game-handler.php" method="post">
-<table>
+<table id='userInput' class='game'>
 <?php
 // Display all previous guesses and the answer key
 if(isset($_SESSION["Game"]["Guesses"])) {
