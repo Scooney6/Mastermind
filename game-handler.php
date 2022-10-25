@@ -21,7 +21,6 @@ if(isset($_POST["GuessSubmit"])) {
     session_start();
     $_SESSION["Game"]["Round"]++;
     $_SESSION["Game"]["Guesses"][$_SESSION["Game"]["Round"]] = array($_POST["C1"], $_POST["C2"], $_POST["C3"], $_POST["C4"]);
-
     $_SESSION["Game"]["Answers"][$_SESSION["Game"]["Round"]]["NumCorrect"] = 0;
     $_SESSION["Game"]["Answers"][$_SESSION["Game"]["Round"]]["NumClose"] = 0;
     $_SESSION["Game"]["Answers"][$_SESSION["Game"]["Round"]]["NumWrong"] = 0;
@@ -40,7 +39,10 @@ if(isset($_POST["GuessSubmit"])) {
             //If the color is elsewhere in the secret
             if (in_array($_SESSION["Game"]["Guesses"][$_SESSION["Game"]["Round"]][$index], $_SESSION["Game"]["Secret"])) {
                 // If color in the secret doesn't have a match already
-                if (count(array_keys($_SESSION["Game"]["Answers"][$_SESSION["Game"]["Round"]]["MatchedColors"], $_SESSION["Game"]["Guesses"][$_SESSION["Game"]["Round"]][$index])) < count(array_keys($_SESSION["Game"]["Secret"], $_SESSION["Game"]["Guesses"][$_SESSION["Game"]["Round"]][$index]))) {
+                if (count(array_keys($_SESSION["Game"]["Answers"][$_SESSION["Game"]["Round"]]["MatchedColors"],
+                        $_SESSION["Game"]["Guesses"][$_SESSION["Game"]["Round"]][$index]))
+                        < count(array_keys($_SESSION["Game"]["Secret"],
+                        $_SESSION["Game"]["Guesses"][$_SESSION["Game"]["Round"]][$index]))) {
                     $_SESSION["Game"]["Answers"][$_SESSION["Game"]["Round"]]["NumClose"]++;
                     $_SESSION["Game"]["Answers"][$_SESSION["Game"]["Round"]]["MatchedColors"][] = $_SESSION["Game"]["Guesses"][$_SESSION["Game"]["Round"]][$index];
                 } else {

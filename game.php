@@ -1,3 +1,7 @@
+<?php
+require("protect.php");
+require("game-handler.php");
+?>
 <html>
     <head>
         <title>Mastermind!</title>
@@ -5,29 +9,22 @@
 
     </head>
         <body>
-        <?php
-require("protect.php");
-require("game-handler.php");
-?>
 <form action="game-handler.php" method="post">
 <table id='userInput' class='game'>
 <?php
 // Display all previous guesses and the answer key
 if(isset($_SESSION["Game"]["Guesses"])) {
     for($index = sizeof($_SESSION["Game"]["Guesses"])+1; $index > 1; $index--) {
-        echo("<tr>");
-        for ($index2 = 0; $index2 < sizeof($_SESSION["Game"]["Guesses"][$index]); $index2++) {
-            echo("<td>" . $_SESSION['Game']['Guesses'][$index][$index2] . "</td>");
-        }
-        for($index3 = 0; $index3 < $_SESSION["Game"]["Answers"][$index]["NumCorrect"]; $index3++) {
-            echo("<td>Correct</td>");
-        }
-        for($index4 = 0; $index4 < $_SESSION["Game"]["Answers"][$index]["NumClose"]; $index4++){
-            echo("<td>Close</td>");
-        }
-        for($index5 = 0; $index5 < $_SESSION["Game"]["Answers"][$index]["NumWrong"]; $index5++){
-            echo("<td>Wrong</td>");
-        }
+        echo("<tr style='height: 20px'>");
+        for ($index2 = 0; $index2 < sizeof($_SESSION["Game"]["Guesses"][$index]); $index2++) {?>
+            <td style="width: 20px; background-color: <?php echo($_SESSION['Game']['Guesses'][$index][$index2])?>"></td>
+        <?php }
+        for($index3 = 0; $index3 < $_SESSION["Game"]["Answers"][$index]["NumCorrect"]; $index3++) {?>
+            <td style="width: 20px; background-color:black"></td>
+        <?php }
+        for($index4 = 0; $index4 < $_SESSION["Game"]["Answers"][$index]["NumClose"]; $index4++){?>
+            <td style="width: 20px; background-color:white"></td>
+        <?php }
         echo("</tr>");
     }
 }?>
@@ -96,7 +93,7 @@ if(isset($_SESSION["Game"]["Guesses"])) {
         <?php } ?>
     </select>
     </td>
-    <td>
+    <td colspan="4">
     <input type="submit" name="GuessSubmit" value="Submit">
     </td>
 </tr>
@@ -109,6 +106,3 @@ if(isset($_SESSION["Game"]["Guesses"])) {
 // Uncomment to show the secret key
 // print_r($_SESSION["Game"]["Secret"]);
 ?>
-        </body>
-    
-</html>

@@ -31,9 +31,14 @@ function sortLeaders()
     $file_path = './leaderboard.txt';
     $new_file_path = './leaderboard.txt';
     $data = file($file_path);
-    natsort($data);
-    $data = array_reverse($data);
-    file_put_contents($new_file_path, $data);
+    foreach($data as $line) {
+        $temp[] = explode(",", $line);
+    }
+    array_multisort(array_column($temp, 1), SORT_DESC, $temp);
+    foreach($temp as $line){
+        $final[] = implode(",", $line);
+    }
+    file_put_contents($new_file_path, $final);
 }
 
 // Function to add a leader to leaderboard.txt, calls sortLeaders()
