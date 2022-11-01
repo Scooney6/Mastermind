@@ -12,6 +12,12 @@ require("rules.php");
         <body>
 <form action="game-handler.php" method="post">
 <table id='userInput' class='game'>
+    <tr style="text-align: center">
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+    </tr>
 <?php
 // Display all previous guesses and the answer key
 if(isset($_SESSION["Game"]["Guesses"])) {

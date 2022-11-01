@@ -11,6 +11,10 @@ function get_rules()
     <b>Note:</b> The black and white squares are not in order based on your guess.<br>
 <br>
     <b>Scoring:</b><br>
-    Scoring is based on the number of tries you take and the time it takes you to guess the correct code.
+    Scoring is based on the number of tries you take and the time it takes you to guess the correct code.<br>
+    <br>
+    <b>Difficulty:</b><br>
+    Difficulty determines the number of possible colors in the secret code.<br>
+    The harder the difficulty, the more colors are possible!
 </p>");
 }?>
