@@ -1,28 +1,30 @@
 <?php
 // Function to display the top 10 leaderboard
 function leaderboard() {
-    $myfile = fopen("./leaderboard.txt", "r") or die("Unable to open file!");
-    echo "
+    $myfile = fopen("./leaderboard.txt", "r") or die("Unable to open file!"); ?>
     <table id='lead' class='center'>
         <tr>
             <th>Place</th>
             <th>Name</th>
             <th>Score</th>
-        </tr>";
-    for($i = 1; $i <= 10; $i++) {
-        if ($line = fgets($myfile)) {
-            $curr = explode(",", $line);
-            echo "
-        <tr>
-            <td>$i</td>
-            <td>$curr[0]</td>
-            <td>$curr[1]</td>
-        </tr>";
-        } else {
-            break;
+        </tr>
+        <?php
+        for($i = 1; $i <= 10; $i++) {
+            if ($line = fgets($myfile)) {
+                $curr = explode(",", $line); ?>
+            <tr>
+                <td><?php echo($i); ?></td>
+                <td><?php echo($curr[0]); ?></td>
+                <td><?php echo($curr[1]); ?></td>
+            </tr>
+            <?php
+            } else {
+                break;
+            }
         }
-    }
-    echo "</table>";
+    ?>
+    </table>
+    <?php
 }
 
 // Function to sort leaderboard.txt

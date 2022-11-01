@@ -11,7 +11,7 @@ require "leaderboard-handler.php";
 </head>
 <body>
     <h1 class="fromtop">Welcome to Mastermind!</h1>
-    <a href='./home.php'><button type="button">Click here to login </button></a>
+    <a href='login.php'><button type="button">Click here to login </button></a>
     <a href='./register.php'><button type="button">Click here to register </button></a>
     <h2>Leaderboard:</h2>
     <?php leaderboard(); ?>
