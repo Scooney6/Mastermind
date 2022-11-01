@@ -17,7 +17,7 @@
     <a href="register.php"><button type="button">Register Here</button></a>
     <?php
     if(isset($_SESSION['LogErr'])) {?>
-        <span style='color:red'>Invalid credentials</span>
+        <p class="error"><span style='color:red'>Invalid credentials</span></p>
     <?php }?>
 </body>
 </html>

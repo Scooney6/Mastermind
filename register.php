@@ -16,7 +16,7 @@
 <a href="home.php"><button type="button">login Here</button></a>
 <?php
 if(isset($_SESSION['RegErr'])) {?>
-    <span style='color:red'>User already registered</span>
+    <p class="error"><span style='color:red'>User already registered</span></p>
 <?php }?>
 </body>
 </html>

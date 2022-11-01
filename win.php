@@ -10,7 +10,7 @@ require("leaderboard-handler.php")
 
 </head>
 <body>
-<h1>You won!</h1>
+<h1 class="pop-outin">You won!</h1>
 <h2>You're Score: <?php echo($_SESSION["Game"]["Score"]); ?></h2>
 <h2>You're Time: <?php echo(round($_SESSION["Game"]["Time"], 2)); ?> Seconds</h2>
 <br>

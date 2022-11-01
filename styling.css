@@ -43,3 +43,61 @@ table.game {
   }
 #userInput  tr:nth-child(even) {background-color: white;}
 #userInput  tr:nth-child(odd) {background-color: lightgrey;}
+
+.pop-outin {
+    animation: 2s anim-popoutin ease 1;
+}
+
+@keyframes anim-popoutin {
+    0% {
+        color: black;
+        transform: scale(0);
+        opacity: 0;
+        text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    25% {
+        color: black;
+        transform: scale(2);
+        opacity: 1;
+        text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        color: black;
+        transform: scale(1);
+        opacity: 1;
+        text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.fromtop {
+    animation: 2s anim-fromtop linear 1;
+}
+@keyframes anim-fromtop {
+    0% { opacity: 0; transform: translateY(-100%);}
+    25% { opacity: 1; transform: translateY(0%);}
+    50% {
+    }
+    100% {
+    }
+}
+
+.title-word {
+    animation: color-animation 4s linear infinite;
+}
+
+.error {
+    animation: horizontal-shaking 60ms linear 3;
+}
+
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(3px) }
+    50% { transform: translateX(-3px) }
+    75% { transform: translateX(3px) }
+    100% { transform: translateX(0) }
+}
