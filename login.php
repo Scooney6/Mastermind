@@ -14,15 +14,18 @@ if(isset($_SESSION['PassErr'])) {
     <link rel="stylesheet" href="styling.css">
 </head>
 <body>
+    <h1 class="fromtop">Mastermind Login</h1>
     <form method="post" action="login-handler.php">
-        Name: <input type="text" name="Username">
-        Password: <input type="password" name="Password">
+        <div style="padding-bottom: 5px">Username: <input type="text" name="Username"><br></div>
+        Password: <input type="password" name="Password"><br><br>
         <input type="submit" name="Login" value="Login">
     </form>
-    <a href="register.php"><button type="button">Register Here</button></a>
     <?php
     if(isset($_SESSION['LogErr'])) {?>
         <p class="error"><span style='color:red'>Invalid credentials</span></p>
-    <?php }?>
+    <?php } else { ?>
+        <br>
+    <?php } ?>
+    <a href="register.php"><button type="button">Register Here</button></a>
 </body>
 </html>

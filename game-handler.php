@@ -31,7 +31,7 @@ if(isset($_POST["GuessSubmit"])) {
         if ($_SESSION["Game"]["Guesses"][$_SESSION["Game"]["Round"]][$index] == $_SESSION["Game"]["Secret"][$index]) {
             $_SESSION["Game"]["Answers"][$_SESSION["Game"]["Round"]]["NumCorrect"]++;
             $_SESSION["Game"]["Answers"][$_SESSION["Game"]["Round"]]["MatchedIndexes"][] = $index;
-            $_SESSION["Game"]["Answers"][$_SESSION["Game"]["Round"]]["MatchedColors"][]= $_SESSION["Game"]["Guesses"][$_SESSION["Game"]["Round"]][$index];
+            $_SESSION["Game"]["Answers"][$_SESSION["Game"]["Round"]]["MatchedColors"][] = $_SESSION["Game"]["Guesses"][$_SESSION["Game"]["Round"]][$index];
         }
     }
     for($index = 0; $index < sizeof($_SESSION["Game"]["Guesses"][$_SESSION["Game"]["Round"]]); $index++) {

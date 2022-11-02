@@ -9,6 +9,7 @@ require("rules.php");
         <link rel="stylesheet" href="styling.css">
     </head>
     <body>
+        <h1 class="rainbow rainbow_text_animated">Mastermind</h1>
         <form action="game-handler.php" method="post">
             <table id='userInput' class='game'>
                 <tr style="text-align: center">

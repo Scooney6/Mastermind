@@ -7,10 +7,9 @@ require "leaderboard-handler.php";
     <meta charset="UTF-8">
     <title>Welcome to Mastermind</title>
     <link rel="stylesheet" href="styling.css">
-
 </head>
 <body>
-    <h1 class="fromtop">Welcome to Mastermind!</h1>
+<h1>Welcome to <span class="rainbow rainbow_text_animated">Mastermind!</span></h1>
     <a href='login.php'><button type="button">Click here to login </button></a>
     <a href='./register.php'><button type="button">Click here to register </button></a>
     <h2>Leaderboard:</h2>

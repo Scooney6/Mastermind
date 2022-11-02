@@ -1,6 +1,7 @@
 body{
     background-color: aqua;
     text-align: center;
+    font-family: verdana, sans-serif;
 }
 table {
     border-collapse: collapse;
@@ -74,8 +75,9 @@ table.game {
 }
 
 .fromtop {
-    animation: 2s anim-fromtop linear 1;
+    animation: 1s anim-fromtop linear 1;
 }
+
 @keyframes anim-fromtop {
     0% { opacity: 0; transform: translateY(-100%);}
     25% { opacity: 1; transform: translateY(0%);}
@@ -85,8 +87,22 @@ table.game {
     }
 }
 
-.title-word {
-    animation: color-animation 4s linear infinite;
+.rainbow_text_animated {
+    background: linear-gradient(to right, Purple, Red, Yellow, Green, Blue, Purple, Red);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 8s linear infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%, 100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
 }
 
 .error {
