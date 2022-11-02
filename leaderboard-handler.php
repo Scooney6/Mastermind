@@ -9,11 +9,19 @@ function leaderboard() {
             <th>Score</th>
         </tr>
         <?php
+        $highlighted = false;
         for($i = 1; $i <= 10; $i++) {
             if ($line = fgets($myfile)) {
-                $curr = explode(",", $line); ?>
-            <tr>
-                <td><?php echo($i); ?></td>
+                $curr = explode(",", $line);
+                if (isset($_SESSION["Game"])) {
+                    if ($_SESSION["Username"] == $curr[0] && $_SESSION["Game"]["Score"] == $curr[1] && !$highlighted) {
+                        $highlighted = true; ?>
+                        <tr class="rainbow_text_animated">
+                    <?php } else { ?>
+                        <tr>
+                    <?php }
+                }?>
+                <td><?php echo($i) ?></td>
                 <td><?php echo($curr[0]); ?></td>
                 <td><?php echo($curr[1]); ?></td>
             </tr>
