@@ -6,6 +6,6 @@ if (isset($_SESSION["Username"])) {
     if(isset($_SESSION["Game"])){
         unset($_SESSION["Game"]);
     }
-    header("location: welcome.php");
+    header("location: index.php");
 }
 ?>
