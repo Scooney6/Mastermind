@@ -6,8 +6,8 @@ function generateCode($Difficulty) {
     global $colors;
     $colors = array("red", "yellow", "green", "blue", "black", "purple", "brown");
     if($Difficulty == "Easy") {
-        //return(array($colors[rand(0, 4)], $colors[rand(0, 4)], $colors[rand(0, 4)], $colors[rand(0, 4)]));
-        return(array("blue", "blue", "green", "green"));
+        return(array($colors[rand(0, 4)], $colors[rand(0, 4)], $colors[rand(0, 4)], $colors[rand(0, 4)]));
+        //FOR TESTING: return(array("blue", "blue", "green", "green"));
     }
     elseif($Difficulty == "Medium") {
         return(array($colors[rand(0, 5)], $colors[rand(0, 5)], $colors[rand(0, 5)], $colors[rand(0, 5)]));
