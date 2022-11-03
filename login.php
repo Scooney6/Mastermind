@@ -5,6 +5,9 @@ if(isset($_SESSION['NameErr'])) {
 }
 if(isset($_SESSION['PassErr'])) {
     unset($_SESSION['PassErr']);
+}
+if(isset($_SESSION['MatchErr'])) {
+    unset($_SESSION['MatchErr']);
 }?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,18 +17,24 @@ if(isset($_SESSION['PassErr'])) {
     <link rel="stylesheet" href="styling.css">
 </head>
 <body>
-    <h1 class="fromtop">Mastermind Login</h1>
+<h1 class="fromtop"><span class="rainbow_text_animated">Mastermind</span> Login</h1>
+<div class="wrapper">
+    <div></div>
+    <div>
     <form method="post" action="login-handler.php">
         <div style="padding-bottom: 5px">Username: <input type="text" name="Username"><br></div>
         Password: <input type="password" name="Password"><br><br>
         <input type="submit" name="Login" value="Login">
+        <br><br>
+        <a href="register.php"><button type="button">Create an Account</button></a>
     </form>
+    </div>
+    <div style="text-align: start">
     <?php
     if(isset($_SESSION['LogErr'])) {?>
         <p class="error"><span style='color:red'>Invalid credentials</span></p>
-    <?php } else { ?>
-        <br>
     <?php } ?>
-    <a href="register.php"><button type="button">Register Here</button></a>
+    </div>
+</div>
 </body>
 </html>

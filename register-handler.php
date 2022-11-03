@@ -4,6 +4,7 @@ session_start();
 if(isset($_POST['Register'])){
     $Username = $_POST['Username'];
     $Password = $_POST['Password'];
+    $Password2 = $_POST['Password2'];
 
     // If that username already exists, don't let them register
     $logins = fopen("logins.txt", "r");
@@ -19,6 +20,18 @@ if(isset($_POST['Register'])){
     // so remove that error.
     if(isset($_SESSION['NameErr'])) {
         unset($_SESSION['NameErr']);
+    }
+
+    // If the passwords don't match, don't let them register
+    if(!($Password == $Password2)) {
+        $_SESSION['MatchErr'] = 1;
+        header("location:register.php");
+        exit();
+    }
+    // If they previously tried to register with passwords that don't match, at this point in the execution the passwords
+    // do match, so remove that error.
+    if(isset($_SESSION['MatchErr'])) {
+        unset($_SESSION['MatchErr']);
     }
 
     // If the password doesn't meet minimum requirements, don't let them register
