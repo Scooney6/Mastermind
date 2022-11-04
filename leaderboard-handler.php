@@ -1,6 +1,7 @@
 <?php
 // Function to display the top 10 leaderboard
 function leaderboard() {
+    sortLeaders();
     $myfile = fopen("./leaderboard.txt", "r") or die("Unable to open file!"); ?>
     <table id='lead' class='center'>
         <tr>
@@ -39,25 +40,23 @@ function leaderboard() {
 function sortLeaders()
 {
     $file_path = './leaderboard.txt';
-    $new_file_path = './leaderboard.txt';
     $data = file($file_path);
     foreach($data as $line) {
         $temp[] = explode(",", $line);
     }
-    array_multisort(array_column($temp, 1), SORT_DESC, $temp);
+    array_multisort(array_column($temp, 1), SORT_DESC, SORT_NUMERIC, $temp);
     foreach($temp as $line){
         $final[] = implode(",", $line);
     }
-    file_put_contents($new_file_path, $final);
+    file_put_contents($file_path, $final);
 }
 
-// Function to add a leader to leaderboard.txt, calls sortLeaders()
+// Function to add a leader to leaderboard.txt
 function insertLeader($name, $score)
 {
     $myfile = fopen("leaderboard.txt", "a+") or die("Unable to open file!");
     $txt = $name . ',' . $score . PHP_EOL;
     fwrite($myfile, $txt);
     fclose($myfile);
-    sortLeaders();
 }
 ?>
